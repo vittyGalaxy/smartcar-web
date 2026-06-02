@@ -1,0 +1,6 @@
+-- Active: 1768521664416@@127.0.0.1@3306@esercizi
+CREATE TABLE Control(
+    idControl INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    description VARCHAR(200) NOT NULL
+)
