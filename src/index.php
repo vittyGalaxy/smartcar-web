@@ -4,7 +4,7 @@
         <h1> Aserial command </h1>
     </head>
     <body>
-        <img src="../img/aserial.jpg">
+        <a href="site_web/view_image.html"> Aserial Image </a>
         <br>
         <a href="site_web/button_move.html"> Aserial Move Control </a>    
     <br>
