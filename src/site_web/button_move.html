@@ -1,33 +1,126 @@
-<html>
-    <title> Aserial Command </title>
-    <head>
-        <h1> Aserial command </h1>
-    </head>
+<!DOCTYPE html>
+<html lang="it">
 
-    <body>
-        <form action="../backend/command_motor.java" method="post">
-            <br>
-            <button id="idbuttonForward" style="width: 200px; height: 80px; font-size: 24px;"> Forward </button>
-        </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aserial Command</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+
+        .panel {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #203a43;
+        }
         
-        <form action="../backend/command_motor.java" method="post">
-            <br>
-            <button id="idbuttonLeft" style="width: 200px; height: 80px; font-size: 24px;"> Left </button>
-        </form>
+        .controller {
+            display: grid;
+            grid-template-columns: 120px 120px 120px;
+            grid-template-rows: 120px 120px 120px;
+            gap: 15px;
 
-        <form action="../backend/command_motor.java" method="post">
-            <br>
-            <button id="idbuttonRight" style="width: 200px; height: 80px; font-size: 24px;"> Right </button>
-        </form>
+            grid-template-areas:
+                ". forward ."
+                "left stop right"
+                ". backward .";
+            
+            justify-content: center;
+            align-items: center;
+        }
 
-        <form action="../backend/command_motor.java" method="post">
-            <br>
-            <button id="idbuttonBackward" style="width: 200px; height: 80px; font-size: 24px;"> Backward </button>
-        </form>
+        button {
+            width: 120px;
+            height: 120px;
+            border: none;
+            border-radius: 18px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
 
-        <form action="../backend/command_motor.java" method="post">
-            <br>
-            <button id="idbuttonStop" style="width: 200px; height: 80px; font-size: 24px;"> Stop </button>
+        button:hover {
+            transform: scale(1.08);
+        }
+
+        .forward {
+            grid-area: forward;
+            background: #4CAF50;
+            color: white;
+        }
+
+        .left {
+            grid-area: left;
+            background: #2196F3;
+            color: white;
+        }
+
+        .stop {
+            grid-area: stop;
+            background: #F44336;
+            color: white;
+        }
+
+        .right {
+            grid-area: right;
+            background: #2196F3;
+            color: white;
+        }
+
+        .backward {
+            grid-area: backward;
+            background: #FF9800;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="panel">
+        <h1>🎮 Aserial Motor Control</h1>
+
+        <form action="../backend/command_motor" method="post">
+
+            <div class="controller">
+
+                <button class="forward" type="submit" name="command" value="forward">⬆</button>
+
+                <button class="left" type="submit" name="command" value="left">⬅</button>
+
+                <button class="stop" type="submit" name="command" value="stop">■</button>
+
+                <button class="right" type="submit" name="command" value="right">➡</button>
+
+                <button class="backward" type="submit" name="command" value="backward">⬇</button>
+
+            </div>
+
         </form>
-    </body>
+    </div>
+
+</body>
 </html>
