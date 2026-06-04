@@ -64,7 +64,7 @@
 <body>
 
     <div class="container">
-        <h1>🚀 Aserial Command</h1>
+        <h1>🚀 Home Aserial</h1>
 
         <p class="subtitle">
             Pannello di controllo del sistema Aserial
